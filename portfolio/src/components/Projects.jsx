@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Projects(props){
     return(
-        <article className="project-card">
+        <article className="project-card" id={props.projectId}>
             <h3>{props.projectTitle || "Project"}</h3>
             <p>{props.projectTagline || "Project Tagline"}</p>
             <figure>
