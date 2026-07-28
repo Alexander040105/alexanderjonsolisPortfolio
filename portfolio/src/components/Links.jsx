@@ -21,4 +21,4 @@ Links.defaultProps = {
     listLabel:" "
 }
 
-export default Projects
+export default Links
