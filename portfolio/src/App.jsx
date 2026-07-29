@@ -5,11 +5,23 @@ import reactLogo from './assets/react.svg'
 import lumiImg from './assets/LUMI.png'
 import arpsLogo from './assets/ARPSLogo.png'
 import autumnAssetsLogo from './assets/AUTUMNASSETS.png'
+import solisImg from './assets/SOLIS.png'
+import resumePdf from './assets/Solis_Resume.pdf'
 import './App.css'
 import Projects from './components/Projects.jsx'
+import Links from './components/Links.jsx'
+import Techstack from './components/Techstack.jsx'
 
 
 function App() {
+  let techstack = {
+    "LUMI": ["React", "FastAPI", "Supabase", "Python", "FAISS"],
+    "EDA Report for Lloyds Banking Group": ["Python", "Pandas", "NumPy", "Matplotlib"],
+    "A.R.P.S": ["Godot", "C++"],
+    "AutumnAssets": ["VanillaJS","HTML", "CSS", "Firebase"],
+    "Champion Performance at Worlds 2024": ["Python", "Pandas", "NumPy", "Matplotlib"],
+    "GuideBot": ["Ollama", "Python", "ElectronJS", "LangChain"]
+  }
   let projects = [
    {
       projectTitle: "LUMI",
@@ -26,7 +38,7 @@ function App() {
     },
     {
       projectTitle: "AutumnAssets",
-      projectTagline: "Farm-finance tracker for Coral Island<",
+      projectTagline: "Farm-finance tracker for Coral Island",
       projectImage: autumnAssetsLogo,
       projectDescription: "A focused tool for managing farm income, expenses, and crop planning in Coral Island, built to make in-game resource tracking simple and visual.",
       projectLink: "https://autumnassets.netlify.app/"
@@ -53,12 +65,118 @@ function App() {
       projectLink: "https://github.com/Alexander040105/terraria-voice-assistant"
     }
   ]
+
+  let navlinks = [
+    {
+        listName:"nav-links-item",
+        listLink:"#home",
+        listLabel:"Home"
+    },
+    {
+        listName:"nav-links-item",
+        listLink:"#about",
+        listLabel:"About"
+    },
+    {
+        listName:"nav-links-item",
+        listLink:"#projects",
+        listLabel:"Projects"
+    },
+    {
+        listName:"nav-links-item",
+        listLink:"#contacts",
+        listLabel:"Contacts"
+    }
+  ]
+  
+  let footlinks = [
+    {
+        listName:"GitHub",
+        listLink:"https://github.com/Alexander040105"
+    },
+    {
+        listName:"LinkedIn",
+        listLink:"https://linkedin.com/in/alexander-jon-solis-2162a727a"
+    },
+    {
+        listName:"Kaggle",
+        listLink:"https://www.kaggle.com/alexanderjonsolis"
+    },
+    {
+        listName:"Instagram",
+        listLink:"https://www.instagram.com/jonjonjonjonnn/"
+    }
+  ]
   return (
     <>
+      <header>
+        <h1><a href="#home" className="logo">Alexander Jon Solis</a></h1>
+        <nav>
+          <button className="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" type="button">
+            <span className="bar" aria-hidden="true"></span>
+            <span className="bar" aria-hidden="true"></span>
+            <span className="bar" aria-hidden="true"></span>
+          </button>
+          <ul className="nav-links" id="nav-links">
+            {navlinks.map((link, index) => (
+              <Links key={index} listName={link.listName} listLink={link.listLink} listLabel={link.listLabel}/>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <main id="main-content">
+         <section id="home" className="hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Hello, I am <span className="highlight">Alexander Jon Solis</span></h1>
+            <p className="hero-subtitle">Computer Science Student &amp; Nerd</p>
+            <p className="hero-lead">I build data-driven web applications that turn complex problems into clean, accessible, and data-driven user experiences.</p>
+            <a href="#projects" className="btn">View My Work</a>
+        </section>
+
+        <section id="about" className="about" aria-labelledby="about-heading">
+            <h2 id="about-heading" className="section-title">About Me</h2>
+            <article className="about-content">
+                <section className="about-text">
+                    <p>I am a Computer Science student with hands-on experience in full-stack web development, data analysis, and AI-assisted tooling. I enjoy breaking down complex problems into reliable, maintainable systems and building interfaces that make data actionable.</p>
+                    <p>My work sits at the intersection of software engineering, data science, and environmental intelligence. I am particularly interested in building platforms that process real-world datasets, surface insights through interactive visualizations, and support better decision-making.</p>
+                    <a href={resumePdf} className="btn" id="downloadBtn" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                </section>
+                <figure className="about-image">
+                    <img src={solisImg} alt="Portrait of Alexander Jon Solis, a computer science student and developer." />
+                </figure>
+            </article>
+        </section>
+        <section id="projects" className="projects">
+          <h2 className="section-title">Featured Projects</h2>
+          <ul className="projects-grid">
+            {projects.map((project, index) => (
+              <li key={index} className="project-item">
+                <Projects techstack={techstack[project.projectTitle]} projectTitle={project.projectTitle} projectTagline={project.projectTagline} projectImage={project.projectImage} projectDescription={project.projectDescription} projectLink={project.projectLink}/>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+
+      <footer id="contacts">
+          <h2 className="section-title">Get In Touch</h2>
+          <address className="contact-content">
+            <ul className="contact-info">
+              <li className="contact-item">
+                <i className="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:alexanderjonsolis0401@gmail.com">alexanderjonsolis0401@gmail.com</a>
+              </li>
+            </ul>
+            <ul className="social-links" aria-label="Social profiles">
+              {footlinks.map((link, index) => (
+                <Links key={index} listName={link.listName} listLink={link.listLink} listLabel={link.listLabel} socialLink={true}/>
+              ))}
+            </ul>
+          </address>
+          <br />
+          <p>&copy; 2026 Alexander Jon S. Solis. All Rights Reserved.</p>
+      </footer>
       
-      {projects.map((project, index) => (
-        <Projects key={index} projectTitle={project.projectTitle} projectTagline={project.projectTagline} projectImage={project.projectImage} projectDescription={project.projectDescription} projectLink={project.projectLink}/>
-      ))}
+      
     </>
   )
 }

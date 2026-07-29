@@ -1,0 +1,33 @@
+.nav-links-item a {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #BF1304;
+    transition: all 0.3s ease;
+}
+
+.nav-links-item a:hover {
+    color: #BF1304;
+}
+
+.nav-links-item a:hover::after,
+.nav-links-item a:focus-visible::after {
+    width: 100%;
+}
+
+.nav-links-item a.active {
+    color: #BF1304;
+}
+
+.nav-links-item a.active::after {
+    width: 100%;
+}
