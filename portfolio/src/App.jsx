@@ -14,6 +14,8 @@ import Techstack from './components/Techstack.jsx'
 
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   let techstack = {
     "LUMI": ["React", "FastAPI", "Supabase", "Python", "FAISS"],
     "EDA Report for Lloyds Banking Group": ["Python", "Pandas", "NumPy", "Matplotlib"],
@@ -112,12 +114,12 @@ function App() {
       <header>
         <h1><a href="#home" className="logo">Alexander Jon Solis</a></h1>
         <nav>
-          <button className="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links" type="button">
+          <button className="hamburger" aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="nav-links" type="button" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="bar" aria-hidden="true"></span>
             <span className="bar" aria-hidden="true"></span>
             <span className="bar" aria-hidden="true"></span>
           </button>
-          <ul className="nav-links" id="nav-links">
+          <ul className={`nav-links ${menuOpen ? 'active' : ''}`} id="nav-links">
             {navlinks.map((link, index) => (
               <Links key={index} listName={link.listName} listLink={link.listLink} listLabel={link.listLabel}/>
             ))}
