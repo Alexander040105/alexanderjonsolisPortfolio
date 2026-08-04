@@ -238,10 +238,7 @@ function App() {
             </ul>
           </address>
           <br />
-          <p>&copy; 2026 Alexander Jon S. Solis. All Rights Reserved.</p>
       </footer>
-      
-      
     </>
   )
 }
