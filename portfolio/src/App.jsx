@@ -16,6 +16,7 @@ import itsHTML from './assets/certs/htmlCSSITS-1.png'
 import ic3 from './assets/certs/ic3-1.png'
 import sqlCert from './assets/certs/intermediateSQL-1.png'
 import itsPython from './assets/certs/pythonITS-1.png'
+import dataScienceJobSimulation from './assets/certs/dataScienceJobSimulation.png'
 
 
 function App() {
@@ -108,6 +109,13 @@ function App() {
       certImage: itsPython,
       certDescription: "Earned the Information Technology Specialist certification in Python, demonstrating foundational programming skills and problem-solving with Python.",
       certLink: "https://verify.certiport.com/?code=yuDk-uT6C"
+    },
+    {
+      certTitle: "Data Science Job Simulation",
+      certTagline: "Lloyds Banking Group / Forage — December 6, 2025",
+      certImage: dataScienceJobSimulation,
+      certDescription: "Completed Forage's Data Science Job Simulation in partnership with Lloyds Banking Group, covering data gathering, exploratory analysis, and building a machine learning model.",
+      certLink: "https://www.theforage.com/completion-certificates/Zbnc2o4ok6kD2NEXx/EuvC8GPjkZ6xaiP9p_Zbnc2o4ok6kD2NEXx_jozTFFqhtkLCXDvKM_1765014608513_completion_certificate.pdf"
     }
   ]
 
