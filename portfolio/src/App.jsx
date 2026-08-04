@@ -76,11 +76,11 @@ function App() {
 
   let certifications = [
     {
-      certTitle: "Data Manipulation with pandas",
+      certTitle: "Data Manipulation with Pandas",
       certTagline: "DataCamp — July 23, 2025",
       certImage: dataManipulationCert,
       certDescription: "Completed DataCamp’s 4-hour Statement of Accomplishment covering data cleaning, transformation, aggregation, and analysis with pandas.",
-      certLink: ""
+      certLink: "https://www.datacamp.com/completed/statement-of-accomplishment/course/9f45e5b955656799be2ae28a61b4301fc9a14c5f"
     },
     {
       certTitle: "HTML and CSS (ITS)",
@@ -101,7 +101,7 @@ function App() {
       certTagline: "DataCamp — October 20, 2025",
       certImage: sqlCert,
       certDescription: "Completed DataCamp’s 4-hour Intermediate SQL course, focusing on joins, subqueries, aggregation, and advanced querying techniques.",
-      certLink: ""
+      certLink: "https://www.datacamp.com/completed/statement-of-accomplishment/course/d8eb1b36e0a572ef129bc092648189fb4f1925be"
     },
     {
       certTitle: "Python (ITS)",
