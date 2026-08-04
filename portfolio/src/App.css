@@ -120,6 +120,10 @@ nav {
     max-width: 600px;
 }
 
+.hero .btn {
+    align-self: flex-start;
+}
+
 .about {
     padding: 100px max(20px, calc((100% - 1200px) / 2));
     background-color: #FBEEE0;

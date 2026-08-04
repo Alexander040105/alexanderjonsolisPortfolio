@@ -189,7 +189,7 @@ function App() {
             <h1 id="hero-heading">Hello, I'm <span className="highlight">Alexander Jon Solis</span></h1>
             <p className="hero-subtitle">Computer Science Student &amp; Nerd</p>
             <p className="hero-lead">I build data-driven web applications that turn complex problems into clean, accessible, and data-driven user experiences.</p>
-            <a href="#projects" className="btn">View My Work</a>
+            <a href="#about" className="btn">Learn More</a>
         </section>
 
         <section id="about" className="about" aria-labelledby="about-heading">
