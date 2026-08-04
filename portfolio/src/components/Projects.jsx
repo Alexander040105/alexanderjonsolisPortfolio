@@ -3,7 +3,7 @@ import Techstack from './Techstack.jsx'
 import './Projects.css'
 
 function Projects(props){
-    return(
+    return(                                                                                                                                                      
         <article className="project-card" id={props.projectId}>
             <h3>{props.projectTitle || "Project"}</h3>
             {props.projectTagline ? <p className="project-tagline">{props.projectTagline}</p> : null}

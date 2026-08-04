@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+// import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
 import lumiImg from './assets/LUMI.png'
@@ -9,8 +9,13 @@ import solisImg from './assets/SOLIS.png'
 import resumePdf from './assets/Solis_Resume.pdf'
 import './App.css'
 import Projects from './components/Projects.jsx'
+import CertificationCarousel from './components/CertificationCarousel.jsx'
 import Links from './components/Links.jsx'
-import Techstack from './components/Techstack.jsx'
+import dataManipulationCert from './assets/certs/dataManipulation-1.png'
+import itsHTML from './assets/certs/htmlCSSITS-1.png'
+import ic3 from './assets/certs/ic3-1.png'
+import sqlCert from './assets/certs/intermediateSQL-1.png'
+import itsPython from './assets/certs/pythonITS-1.png'
 
 
 function App() {
@@ -68,6 +73,44 @@ function App() {
     }
   ]
 
+  let certifications = [
+    {
+      certTitle: "Data Manipulation with pandas",
+      certTagline: "DataCamp — July 23, 2025",
+      certImage: dataManipulationCert,
+      certDescription: "Completed DataCamp’s 4-hour Statement of Accomplishment covering data cleaning, transformation, aggregation, and analysis with pandas.",
+      certLink: ""
+    },
+    {
+      certTitle: "HTML and CSS (ITS)",
+      certTagline: "Certiport / Pearson VUE — January 12, 2024",
+      certImage: itsHTML,
+      certDescription: "Earned the Information Technology Specialist certification in HTML and CSS, validating proficiency in web page structure and styling.",
+      certLink: "https://verify.certiport.com/?code=vqBa-DwVk"
+    },
+    {
+      certTitle: "IC3 GS6 Level 1",
+      certTagline: "Certiport / Pearson VUE — May 30, 2024",
+      certImage: ic3,
+      certDescription: "Earned Certiport’s IC3 Global Standard Six Level 1 certification covering technology basics, digital citizenship, information management, content creation, communication, collaboration, and safety and security.",
+      certLink: "https://verify.certiport.com/?code=vz2H-uTdJ"
+    },
+    {
+      certTitle: "Intermediate SQL",
+      certTagline: "DataCamp — October 20, 2025",
+      certImage: sqlCert,
+      certDescription: "Completed DataCamp’s 4-hour Intermediate SQL course, focusing on joins, subqueries, aggregation, and advanced querying techniques.",
+      certLink: ""
+    },
+    {
+      certTitle: "Python (ITS)",
+      certTagline: "Certiport / Pearson VUE — March 14, 2026",
+      certImage: itsPython,
+      certDescription: "Earned the Information Technology Specialist certification in Python, demonstrating foundational programming skills and problem-solving with Python.",
+      certLink: "https://verify.certiport.com/?code=yuDk-uT6C"
+    }
+  ]
+
   let navlinks = [
     {
         listName:"nav-links-item",
@@ -83,6 +126,11 @@ function App() {
         listName:"nav-links-item",
         listLink:"#projects",
         listLabel:"Projects"
+    },
+    {
+        listName:"nav-links-item",
+        listLink:"#certification",
+        listLabel:"Certifications"
     },
     {
         listName:"nav-links-item",
@@ -109,6 +157,8 @@ function App() {
         listLink:"https://www.instagram.com/jonjonjonjonnn/"
     }
   ]
+
+  
   return (
     <>
       <header>
@@ -156,6 +206,11 @@ function App() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="certification" className="projects">
+          <h2 className="section-title">Certifications</h2>
+          <CertificationCarousel certifications={certifications} />
         </section>
       </main>
 
