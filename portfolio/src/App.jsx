@@ -186,7 +186,7 @@ function App() {
       </header>
       <main id="main-content">
          <section id="home" className="hero" aria-labelledby="hero-heading">
-            <h1 id="hero-heading">Hello, I am <span className="highlight">Alexander Jon Solis</span></h1>
+            <h1 id="hero-heading">Hello, I'm <span className="highlight">Alexander Jon Solis</span></h1>
             <p className="hero-subtitle">Computer Science Student &amp; Nerd</p>
             <p className="hero-lead">I build data-driven web applications that turn complex problems into clean, accessible, and data-driven user experiences.</p>
             <a href="#projects" className="btn">View My Work</a>
