@@ -170,7 +170,7 @@ function App() {
   return (
     <>
       <header>
-        <h1><a href="#home" className="logo">Alexander Jon Solis</a></h1>
+        {/* <h1><a href="#home" className="logo">Alexander Jon Solis</a></h1> */}
         <nav>
           <button className="hamburger" aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="nav-links" type="button" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="bar" aria-hidden="true"></span>
