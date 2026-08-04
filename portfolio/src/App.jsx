@@ -189,7 +189,7 @@ function App() {
             <article className="about-content">
                 <section className="about-text">
                     <p>I am a Computer Science student with hands-on experience in full-stack web development, data analysis, and AI-assisted tooling. I enjoy breaking down complex problems into reliable, maintainable systems and building interfaces that make data actionable.</p>
-                    <p>My work sits at the intersection of software engineering, data science, and environmental intelligence. I am particularly interested in building platforms that process real-world datasets, surface insights through interactive visualizations, and support better decision-making.</p>
+                    <p>My work sits at the intersection of software engineering and data science. I am particularly interested in building platforms that process real-world datasets, surface insights through interactive visualizations, and support better decision-making.</p>
                     <a href={resumePdf} className="btn" id="downloadBtn" target="_blank" rel="noopener noreferrer">Download Resume</a>
                 </section>
                 <figure className="about-image">
