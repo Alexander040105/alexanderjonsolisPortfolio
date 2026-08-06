@@ -3,16 +3,26 @@ import Techstack from './Techstack.jsx'
 import './Projects.css'
 
 function Projects(props){
+    const initial = props.projectTitle ? props.projectTitle.charAt(0).toUpperCase() : '?'
+
     return(                                                                                                                                                      
         <article className="project-card" id={props.projectId}>
             <h3>{props.projectTitle || "Project"}</h3>
             {props.projectTagline ? <p className="project-tagline">{props.projectTagline}</p> : null}
             <figure className="project-figure">
-                {props.projectImage ? <img src={props.projectImage} alt={props.projectTitle} /> : null}
+                {props.projectImage ? (
+                    <img src={props.projectImage} alt={props.projectTitle} />
+                ) : (
+                    <div className="project-figure-placeholder" aria-hidden="true">{initial}</div>
+                )}
             </figure>
             <p>{props.projectDescription || "Project Description"}</p>
             <Techstack techstack={props.techstack} techstackKey={props.projectTitle} />
-            <a href={props.projectLink || "#"} className="project-link" target="_blank">View Project <span aria-hidden="true">&rarr;</span></a>
+            {props.projectLink && (
+                <a href={props.projectLink} className="project-link" target="_blank" rel="noopener noreferrer" aria-label={`View ${props.projectTitle} project`}>
+                    View Project <span aria-hidden="true">&rarr;</span>
+                </a>
+            )}
         </article>
     );
 }

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --navbar-height: 80px;
+    --navbar-z-index: 1100;
+}
+
 html {
     scroll-behavior: smooth;
 }

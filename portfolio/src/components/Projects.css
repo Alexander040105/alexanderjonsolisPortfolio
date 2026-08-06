@@ -45,6 +45,19 @@
     color: #BF1304;
 }
 
+.project-figure-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(191, 19, 4, 0.1);
+    color: #BF1304;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
 .project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;

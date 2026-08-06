@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import lumiImg from './assets/LUMI.png'
 import arpsLogo from './assets/ARPSLogo.png'
 import autumnAssetsLogo from './assets/AUTUMNASSETS.png'
+import aeltaImg from './assets/AeltaHeroPage.jpg'
 import solisImg from './assets/SOLIS.png'
 import resumePdf from './assets/Solis_Resume.pdf'
 import './App.css'
-import Projects from './components/Projects.jsx'
-import CertificationCarousel from './components/CertificationCarousel.jsx'
+import Home from './components/Home.jsx'
+import ProjectsPage from './components/ProjectsPage.jsx'
 import Links from './components/Links.jsx'
 import dataManipulationCert from './assets/certs/dataManipulation-1.png'
 import itsHTML from './assets/certs/htmlCSSITS-1.png'
@@ -19,6 +21,24 @@ import itsPython from './assets/certs/pythonITS-1.png'
 import dataScienceJobSimulation from './assets/certs/dataScienceJobSimulation.png'
 
 
+function ScrollToHash() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '')
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto' })
+      }
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
+
+  return null
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -26,18 +46,22 @@ function App() {
     "LUMI": ["React", "FastAPI", "Supabase", "Python", "FAISS"],
     "EDA Report for Lloyds Banking Group": ["Python", "Pandas", "NumPy", "Matplotlib"],
     "A.R.P.S": ["Godot", "C++"],
-    "AutumnAssets": ["VanillaJS","HTML", "CSS", "Firebase"],
+    "AutumnAssets": ["VanillaJS", "HTML", "CSS", "Firebase"],
     "Champion Performance at Worlds 2024": ["Python", "Pandas", "NumPy", "Matplotlib"],
-    "GuideBot": ["Ollama", "Python", "ElectronJS", "LangChain"]
+    "GuideBot": ["Ollama", "Python", "ElectronJS", "LangChain"],
+    "Aelta": ["HTML", "CSS", "JavaScript", "Data Analytics", "Generative AI"],
+    "Human Resources Management System": ["Flask", "MySQL", "Python"]
   }
+
   let projects = [
-   {
+    {
       projectTitle: "LUMI",
       projectTagline: "Data-Driven Environmental Intelligence for Renewable Energy Decision Support",
       projectImage: lumiImg,
       projectDescription: "LUMI is an AI-assisted environmental intelligence platform that helps users evaluate renewable energy potential for municipalities across the Philippines using real-world climate and environmental data. It combines data engineering, machine learning, geographic visualization, and retrieval-augmented AI to turn environmental data into actionable insights.",
       projectLink: "https://github.com/Alexander040105/Lumi"
-    },{
+    },
+    {
       projectTitle: "EDA Report for Lloyds Banking Group",
       projectTagline: "",
       projectImage: "",
@@ -50,6 +74,20 @@ function App() {
       projectImage: autumnAssetsLogo,
       projectDescription: "A focused tool for managing farm income, expenses, and crop planning in Coral Island, built to make in-game resource tracking simple and visual.",
       projectLink: "https://autumnassets.netlify.app/"
+    },
+    {
+      projectTitle: "Aelta",
+      projectTagline: "Altea Resort Booking System",
+      projectImage: aeltaImg,
+      projectDescription: "Aelta is a web-based self-booking and confirmation system designed for Altea Private Resort, built to streamline reservations and improve overall operational efficiency. It integrates data analytics and generative AI to deliver smarter insights, enhance user experience, and support better decision-making.",
+      projectLink: "https://altea-resort-booking-system.onrender.com/home/"
+    },
+    {
+      projectTitle: "Human Resources Management System",
+      projectTagline: "Flask + MySQL HRMS",
+      projectImage: "",
+      projectDescription: "A comprehensive web-based Human Resources Management System built with Flask and MySQL, designed to streamline employee management, leave requests, and administrative operations.",
+      projectLink: "https://github.com/Alexander040105/Human-Resources-Management-System"
     },
     {
       projectTitle: "Champion Performance at Worlds 2024",
@@ -73,6 +111,12 @@ function App() {
       projectLink: "https://github.com/Alexander040105/terraria-voice-assistant"
     }
   ]
+
+  const featuredProjectTitles = ["LUMI", "EDA Report for Lloyds Banking Group", "AutumnAssets"]
+  const titleIndex = Object.fromEntries(featuredProjectTitles.map((title, index) => [title, index]))
+  const featuredProjects = projects
+    .filter(project => featuredProjectTitles.includes(project.projectTitle))
+    .sort((a, b) => titleIndex[a.projectTitle] - titleIndex[b.projectTitle])
 
   let certifications = [
     {
@@ -121,56 +165,56 @@ function App() {
 
   let navlinks = [
     {
-        listName:"nav-links-item",
-        listLink:"#home",
-        listLabel:"Home"
+      listName: "nav-links-item",
+      listLink: "/",
+      listLabel: "Home"
     },
     {
-        listName:"nav-links-item",
-        listLink:"#about",
-        listLabel:"About"
+      listName: "nav-links-item",
+      listLink: "/#about",
+      listLabel: "About"
     },
     {
-        listName:"nav-links-item",
-        listLink:"#projects",
-        listLabel:"Projects"
+      listName: "nav-links-item",
+      listLink: "/projects",
+      listLabel: "Projects"
     },
     {
-        listName:"nav-links-item",
-        listLink:"#certification",
-        listLabel:"Certifications"
+      listName: "nav-links-item",
+      listLink: "/#certification",
+      listLabel: "Certifications"
     },
     {
-        listName:"nav-links-item",
-        listLink:"#contacts",
-        listLabel:"Contacts"
-    }
-  ]
-  
-  let footlinks = [
-    {
-        listName:"GitHub",
-        listLink:"https://github.com/Alexander040105"
-    },
-    {
-        listName:"LinkedIn",
-        listLink:"https://linkedin.com/in/alexander-jon-solis-2162a727a"
-    },
-    {
-        listName:"Kaggle",
-        listLink:"https://www.kaggle.com/alexanderjonsolis"
-    },
-    {
-        listName:"Instagram",
-        listLink:"https://www.instagram.com/jonjonjonjonnn/"
+      listName: "nav-links-item",
+      listLink: "/#contacts",
+      listLabel: "Contacts"
     }
   ]
 
-  
+  let footlinks = [
+    {
+      listName: "GitHub",
+      listLink: "https://github.com/Alexander040105"
+    },
+    {
+      listName: "LinkedIn",
+      listLink: "https://linkedin.com/in/alexander-jon-solis-2162a727a"
+    },
+    {
+      listName: "Kaggle",
+      listLink: "https://www.kaggle.com/alexanderjonsolis"
+    },
+    {
+      listName: "Instagram",
+      listLink: "https://www.instagram.com/jonjonjonjonnn/"
+    }
+  ]
+
   return (
     <>
-      <header>
-        {/* <h1><a href="#home" className="logo">Alexander Jon Solis</a></h1> */}
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <ScrollToHash />
+      <header className="site-header">
         <nav>
           <button className="hamburger" aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="nav-links" type="button" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="bar" aria-hidden="true"></span>
@@ -179,65 +223,64 @@ function App() {
           </button>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`} id="nav-links">
             {navlinks.map((link, index) => (
-              <Links key={index} listName={link.listName} listLink={link.listLink} listLabel={link.listLabel}/>
+              <Links
+                key={index}
+                listName={link.listName}
+                listLink={link.listLink}
+                listLabel={link.listLabel}
+                isRouterLink={true}
+                onClick={() => setMenuOpen(false)}
+              />
             ))}
           </ul>
         </nav>
       </header>
-      <main id="main-content">
-         <section id="home" className="hero" aria-labelledby="hero-heading">
-            <h1 id="hero-heading">Hello, I'm <span className="highlight">Alexander Jon Solis</span></h1>
-            <p className="hero-subtitle">Computer Science Student &amp; Nerd</p>
-            <p className="hero-lead">I build data-driven web applications that turn complex problems into clean, accessible, and data-driven user experiences.</p>
-            <a href="#about" className="btn">Learn More</a>
-        </section>
-
-        <section id="about" className="about" aria-labelledby="about-heading">
-            <h2 id="about-heading" className="section-title">About Me</h2>
-            <article className="about-content">
-                <section className="about-text">
-                    <p>I am a Computer Science student with hands-on experience in full-stack web development, data analysis, and AI-assisted tooling. I enjoy breaking down complex problems into reliable, maintainable systems and building interfaces that make data actionable.</p>
-                    <p>My work sits at the intersection of software engineering and data science. I am particularly interested in building platforms that process real-world datasets, surface insights through interactive visualizations, and support better decision-making.</p>
-                    <a href={resumePdf} className="btn" id="downloadBtn" target="_blank" rel="noopener noreferrer">Download Resume</a>
-                </section>
-                <figure className="about-image">
-                    <img src={solisImg} alt="Portrait of Alexander Jon Solis, a computer science student and developer." />
-                </figure>
-            </article>
-        </section>
-        <section id="projects" className="projects">
-          <h2 className="section-title">Featured Projects</h2>
-          <ul className="projects-grid">
-            {projects.map((project, index) => (
-              <li key={index} className="project-item">
-                <Projects techstack={techstack[project.projectTitle]} projectTitle={project.projectTitle} projectTagline={project.projectTagline} projectImage={project.projectImage} projectDescription={project.projectDescription} projectLink={project.projectLink}/>
-              </li>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              homeProjects={featuredProjects}
+              techstack={techstack}
+              certifications={certifications}
+              solisImg={solisImg}
+              resumePdf={resumePdf}
+            />
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <ProjectsPage
+              projects={projects}
+              techstack={techstack}
+            />
+          }
+        />
+      </Routes>
+      <footer id="contacts">
+        <h2 className="section-title">Get In Touch</h2>
+        <address className="contact-content">
+          <ul className="contact-info">
+            <li className="contact-item">
+              <i className="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:alexanderjonsolis0401@gmail.com">alexanderjonsolis0401@gmail.com</a>
+            </li>
+          </ul>
+          <ul className="social-links" aria-label="Social profiles">
+            {footlinks.map((link, index) => (
+              <Links
+                key={index}
+                listName={link.listName}
+                listLink={link.listLink}
+                listLabel={link.listLabel}
+                socialLink={true}
+                isRouterLink={false}
+              />
             ))}
           </ul>
-        </section>
-
-        <section id="certification" className="projects">
-          <h2 className="section-title">Certifications</h2>
-          <CertificationCarousel certifications={certifications} />
-        </section>
-      </main>
-
-      <footer id="contacts">
-          <h2 className="section-title">Get In Touch</h2>
-          <address className="contact-content">
-            <ul className="contact-info">
-              <li className="contact-item">
-                <i className="fas fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:alexanderjonsolis0401@gmail.com">alexanderjonsolis0401@gmail.com</a>
-              </li>
-            </ul>
-            <ul className="social-links" aria-label="Social profiles">
-              {footlinks.map((link, index) => (
-                <Links key={index} listName={link.listName} listLink={link.listLink} listLabel={link.listLabel} socialLink={true}/>
-              ))}
-            </ul>
-          </address>
-          <br />
+        </address>
+        <br />
       </footer>
     </>
   )
