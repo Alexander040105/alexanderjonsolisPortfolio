@@ -1,0 +1,70 @@
+.experience-category {
+    margin-bottom: 60px;
+}
+
+.experience-category-title {
+    font-size: 1.75rem;
+    color: #000000;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.experience-category-title i {
+    color: #BF1304;
+}
+
+.experience-timeline {
+    position: relative;
+    list-style: none;
+    padding-left: 32px;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #000000;
+}
+
+.experience-timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.experience-timeline-dot {
+    position: absolute;
+    left: -24px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #BF1304;
+    border: 3px solid #FFFFFF;
+}
+
+.experience-timeline-item .experience-card {
+    transition-delay: calc(var(--stagger) * 0.1s);
+}
+
+@media (max-width: 768px) {
+    .experience-category-title {
+        font-size: 1.4rem;
+    }
+
+    .experience-timeline {
+        padding-left: 24px;
+    }
+
+    .experience-timeline-dot {
+        left: -18px;
+        top: 20px;
+        width: 14px;
+        height: 14px;
+        border: 3px solid #FFFFFF;
+    }
+}

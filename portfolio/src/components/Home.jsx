@@ -1,31 +1,46 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Projects from './Projects.jsx'
+import TechnicalSkills from './TechnicalSkills.jsx'
 import CertificationCarousel from './CertificationCarousel.jsx'
+import LeadershipSection from './LeadershipSection.jsx'
 
-function Home({ homeProjects, techstack, certifications, solisImg, resumePdf }) {
+function Home({ homeProjects, techstack, certifications, featuredExperiences, solisImg, resumePdf }) {
   return (
     <main id="main-content">
       <section id="home" className="hero" aria-labelledby="hero-heading">
-        <h1 id="hero-heading">Hello, I&apos;m <span className="highlight">Alexander Jon Solis</span></h1>
-        <p className="hero-subtitle">Computer Science Student &amp; Nerd</p>
-        <p className="hero-lead">I build data-driven web applications that turn complex problems into clean, accessible, and data-driven user experiences.</p>
-        <a href="#about" className="btn">Learn More</a>
+        <div className="hero-content">
+          <p className="hero-eyebrow">Full Stack Developer • Data Analyst • Nerd</p>
+          <h1 id="hero-heading" className="hero-name">Alexander Jon Solis</h1>
+          <p className="hero-summary">
+            Building intelligent web applications powered by artificial intelligence,
+            modern software engineering, and data-driven solutions that create meaningful impact.
+          </p>
+          <div className="hero-cta-group">
+            <a href="#projects" className="btn btn-primary">View Projects</a>
+            <a href={resumePdf} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+          </div>
+          <ul className="hero-socials" aria-label="Social profiles">
+            <li>
+              <a href="https://github.com/Alexander040105" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/alexander-jon-solis-2162a727a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <a href="mailto:alexanderjonsolis0401@gmail.com">Email</a>
+            </li>
+            <li>
+              <a href="https://www.kaggle.com/alexanderjonsolis" target="_blank" rel="noopener noreferrer">Kaggle</a>
+            </li>
+          </ul>
+        </div>
+        <figure className="hero-image">
+          <img src={solisImg} alt="Portrait of Alexander Jon Solis" />
+        </figure>
       </section>
 
-      <section id="about" className="about" aria-labelledby="about-heading">
-        <h2 id="about-heading" className="section-title">About Me</h2>
-        <article className="about-content">
-          <section className="about-text">
-            <p>I am a Computer Science student with hands-on experience in full-stack web development, data analysis, and AI-assisted tooling. I enjoy breaking down complex problems into reliable, maintainable systems and building interfaces that make data actionable.</p>
-            <p>My work sits at the intersection of software engineering and data science. I am particularly interested in building platforms that process real-world datasets, surface insights through interactive visualizations, and support better decision-making.</p>
-            <a href={resumePdf} className="btn" id="downloadBtn" target="_blank" rel="noopener noreferrer">Download Resume</a>
-          </section>
-          <figure className="about-image">
-            <img src={solisImg} alt="Portrait of Alexander Jon Solis, a computer science student and developer." />
-          </figure>
-        </article>
-      </section>
+      <TechnicalSkills />
 
       <section id="projects" className="projects">
         <div className="projects-header">
@@ -48,6 +63,8 @@ function Home({ homeProjects, techstack, certifications, solisImg, resumePdf }) 
         </ul>
       </section>
 
+      <LeadershipSection featuredExperiences={featuredExperiences} />
+
       <section id="certification" className="projects">
         <h2 className="section-title">Certifications</h2>
         <CertificationCarousel certifications={certifications} />
@@ -60,6 +77,7 @@ Home.propTypes = {
   homeProjects: PropTypes.array,
   techstack: PropTypes.object,
   certifications: PropTypes.array,
+  featuredExperiences: PropTypes.array,
   solisImg: PropTypes.string,
   resumePdf: PropTypes.string,
 }
@@ -68,6 +86,7 @@ Home.defaultProps = {
   homeProjects: [],
   techstack: {},
   certifications: [],
+  featuredExperiences: [],
   solisImg: '',
   resumePdf: '',
 }

@@ -1,0 +1,28 @@
+.experience-page {
+    padding: calc(var(--navbar-height) + 40px) max(20px, calc((100% - 1100px) / 2)) 100px;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+}
+
+.experience-page .page-header {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.experience-page-intro {
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .experience-page {
+        padding: calc(var(--navbar-height) + 20px) max(20px, calc((100% - 1100px) / 2)) 80px;
+    }
+
+    .experience-page-intro {
+        margin-bottom: 40px;
+    }
+}
