@@ -1,0 +1,52 @@
+.leadership {
+    padding: 100px max(20px, calc((100% - 1200px) / 2));
+    background-color: #FFFFFF;
+}
+
+.leadership-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.leadership-header .section-title {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.leadership-intro {
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+.leadership-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.leadership-highlight {
+    list-style: none;
+}
+
+.leadership-highlight .experience-card {
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .leadership {
+        padding: 80px max(20px, calc((100% - 1200px) / 2));
+    }
+
+    .leadership-highlights {
+        grid-template-columns: 1fr;
+    }
+}
