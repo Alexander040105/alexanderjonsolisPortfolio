@@ -20,6 +20,7 @@ import ic3 from './assets/certs/ic3-1.png'
 import sqlCert from './assets/certs/intermediateSQL-1.png'
 import itsPython from './assets/certs/pythonITS-1.png'
 import dataScienceJobSimulation from './assets/certs/dataScienceJobSimulation.png'
+import datacomCert from './assets/certs/DATACOM_FORAGE_CERT-1.png'
 
 
 function ScrollToHash() {
@@ -161,6 +162,13 @@ function App() {
       certImage: dataScienceJobSimulation,
       certDescription: "Completed Forage's Data Science Job Simulation in partnership with Lloyds Banking Group, covering data gathering, exploratory analysis, and building a machine learning model.",
       certLink: "https://www.theforage.com/completion-certificates/Zbnc2o4ok6kD2NEXx/EuvC8GPjkZ6xaiP9p_Zbnc2o4ok6kD2NEXx_jozTFFqhtkLCXDvKM_1765014608513_completion_certificate.pdf"
+    },
+    {
+      certTitle: "Datacom Partnering with AI in the Workplace",
+      certTagline: "Datacom / Forage — August 11, 2026",
+      certImage: datacomCert,
+      certDescription: "Completed Datacom's job simulation on Forage, using generative AI to research, write, design, debug, and present client-ready solutions. Practiced prompt engineering, troubleshooting a website issue, and applying AI output in a professional, non-technical setting.",
+      certLink: "https://www.theforage.com/completion-certificates/gCW7Xki5Y3vNpBmnn/YKTiJKCwxeXG3diLY_gCW7Xki5Y3vNpBmnn_jozTFFqhtkLCXDvKM_1786379278233_completion_certificate.pdf"
     }
   ]
 
