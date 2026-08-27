@@ -61,7 +61,7 @@ function App() {
       projectTagline: "Data-Driven Environmental Intelligence for Renewable Energy Decision Support",
       projectImage: lumiImg,
       projectDescription: "LUMI is an AI-assisted environmental intelligence platform that helps users evaluate renewable energy potential for municipalities across the Philippines using real-world climate and environmental data. It combines data engineering, machine learning, geographic visualization, and retrieval-augmented AI to turn environmental data into actionable insights.",
-      projectLink: "https://github.com/Alexander040105/Lumi"
+      projectLink: "https://lumi-frontend-xi.vercel.app/"
     },
     {
       projectTitle: "EDA Report for Lloyds Banking Group",
