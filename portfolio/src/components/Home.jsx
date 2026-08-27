@@ -10,8 +10,8 @@ function Home({ homeProjects, techstack, certifications, featuredExperiences, so
     <main id="main-content">
       <section id="home" className="hero" aria-labelledby="hero-heading">
         <div className="hero-content">
-          <p className="hero-eyebrow">Full Stack Developer • Data Analyst • Nerd</p>
           <h1 id="hero-heading" className="hero-name">Alexander Jon Solis</h1>
+          <p className="hero-eyebrow">Full Stack Developer • Data Analyst • Nerd</p>
           <p className="hero-summary">
             Building intelligent web applications powered by artificial intelligence,
             modern software engineering, and data-driven solutions that create meaningful impact.
