@@ -1,63 +1,67 @@
 .technical-skills {
-    padding: 100px max(20px, calc((100% - 1200px) / 2));
-    background-color: #FFFFFF;
+    padding: 96px max(24px, calc((100% - 1200px) / 2));
+    background-color: var(--color-white);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+    gap: 24px;
 }
 
 .skills-card {
-    background: #FFFFFF;
-    border: 1px solid #BF1304;
-    border-radius: 10px;
-    padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--color-white);
+    border: 2px solid var(--color-black);
+    padding: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .skills-card:hover,
 .skills-card:focus-within {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-2);
+    border-color: var(--color-red);
 }
 
 .skills-card-title {
-    font-size: 1.4rem;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
     margin-bottom: 12px;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .skills-card-desc {
-    font-size: 1rem;
-    color: #333333;
-    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--color-gray);
+    margin-bottom: 24px;
     line-height: 1.5;
 }
 
 .skills-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     padding: 0;
     list-style: none;
 }
 
 .skills-badge {
-    background: #FFFFFF;
-    color: #BF1304;
-    border: 1px solid #BF1304;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .skills-badge:hover {
-    background: #BF1304;
-    color: #FFFFFF;
+    background: var(--color-red);
+    color: var(--color-white);
+    border-color: var(--color-red);
 }
 
 @media (max-width: 768px) {
@@ -66,7 +70,7 @@
     }
 
     .technical-skills {
-        padding: 80px 20px;
+        padding: 48px 24px;
     }
 }
 

@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './Links.css'
 
 
 function Links(props){
     const linkClass = props.socialLink ? "social-link" : props.listName
     const linkContent = props.listLabel ? props.listLabel : <i className={`fab fa-${props.listName.toLowerCase()}`} aria-hidden="true"></i>
+    const isHashLink = typeof props.listLink === 'string' && props.listLink.includes('#')
 
     return(
         <li className={props.listName}>
-            {props.isRouterLink ? (
+            {props.isRouterLink && !isHashLink ? (
+                <NavLink to={props.listLink} className={({ isActive }) => linkClass + (isActive ? ' active' : '')} onClick={props.onClick}>
+                    {linkContent}
+                </NavLink>
+            ) : props.isRouterLink ? (
                 <Link to={props.listLink} className={linkClass} onClick={props.onClick}>
                     {linkContent}
                 </Link>

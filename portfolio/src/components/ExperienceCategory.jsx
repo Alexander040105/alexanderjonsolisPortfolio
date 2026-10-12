@@ -5,9 +5,9 @@ import './ExperienceCategory.css'
 function ExperienceCategory({ category, icon, items }) {
   return (
     <div className="experience-category">
-      <h3 className="experience-category-title">
+      <h2 className="experience-category-title">
         <i className={icon} aria-hidden="true"></i> {category}
-      </h3>
+      </h2>
       <ul className="experience-timeline">
         {items.map((item, index) => (
           <li

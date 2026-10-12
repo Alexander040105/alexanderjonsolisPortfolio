@@ -24,7 +24,7 @@ function ExperienceCard({ experience }) {
       </div>
       <div className="experience-card-content">
         <div className="experience-card-header">
-          <h4 className="experience-card-title">{title}</h4>
+          <h3 className="experience-card-title">{title}</h3>
           {date && <span className="experience-card-date">{date}</span>}
         </div>
         {tagline && <p className="experience-card-tagline">{tagline}</p>}

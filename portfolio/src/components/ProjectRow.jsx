@@ -10,7 +10,7 @@ function ProjectRow({ project, techstack = [] }) {
     <article className="project-row">
       <div className="project-row-media">
         {projectImage ? (
-          <img src={projectImage} alt={projectTitle} />
+          <img src={projectImage} alt={projectTitle} loading="lazy" decoding="async" />
         ) : (
           <div className="project-row-placeholder" aria-hidden="true">{fallbackInitial}</div>
         )}

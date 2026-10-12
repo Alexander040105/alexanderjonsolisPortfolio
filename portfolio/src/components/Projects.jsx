@@ -11,7 +11,7 @@ function Projects(props){
             {props.projectTagline ? <p className="project-tagline">{props.projectTagline}</p> : null}
             <figure className="project-figure">
                 {props.projectImage ? (
-                    <img src={props.projectImage} alt={props.projectTitle} />
+                    <img src={props.projectImage} alt={props.projectTitle} loading="lazy" decoding="async" />
                 ) : (
                     <div className="project-figure-placeholder" aria-hidden="true">{initial}</div>
                 )}

@@ -100,6 +100,12 @@ function CertificationCarousel({ certifications }) {
     }
   }
 
+  const goToIndex = (index) => {
+    if (isJumping.current) return
+    setCurrentIndex(index)
+    scrollToTrackIndex(index + 1, true)
+  }
+
   const handlePointerDown = (e) => {
     if (isJumping.current) return
     isDragging.current = true
@@ -148,7 +154,7 @@ function CertificationCarousel({ certifications }) {
   }, [jumpToReal])
 
   return (
-    <div className="certification-carousel">
+    <div className="certification-carousel" role="region" aria-roledescription="carousel" aria-label="Certifications">
       <div
         className="certification-track"
         ref={trackRef}
@@ -168,7 +174,7 @@ function CertificationCarousel({ certifications }) {
               <h3>{cert.certTitle}</h3>
               {cert.certTagline && <p className="certification-tagline">{cert.certTagline}</p>}
               <figure className="certification-figure">
-                <img src={cert.certImage} alt={cert.certTitle} draggable="false" />
+                <img src={cert.certImage} alt={cert.certTitle} draggable="false" loading="lazy" decoding="async" />
               </figure>
               <p className="certification-description">{cert.certDescription}</p>
               {cert.certLink && (
@@ -188,6 +194,21 @@ function CertificationCarousel({ certifications }) {
         <button type="button" className="carousel-arrow" onClick={goToNext} aria-label="Next certification">
           <i className="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
+      </div>
+
+      <div className="certification-pagination" aria-label="Certification pages">
+        {certifications.map((cert, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`pagination-block ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToIndex(index)}
+            aria-label={`Go to certification ${index + 1} of ${n}: ${cert.certTitle}`}
+            aria-current={index === currentIndex ? 'true' : undefined}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   )

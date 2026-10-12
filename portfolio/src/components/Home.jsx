@@ -36,7 +36,7 @@ function Home({ homeProjects, techstack, certifications, featuredExperiences, so
           </ul>
         </div>
         <figure className="hero-image">
-          <img src={solisImg} alt="Portrait of Alexander Jon Solis" />
+          <img src={solisImg} alt="Portrait of Alexander Jon Solis" width="300" height="300" decoding="async" fetchPriority="high" />
         </figure>
       </section>
 

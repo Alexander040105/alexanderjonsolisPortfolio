@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 // import heroImg from './assets/hero.png'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import lumiImg from './assets/LUMI.png'
+import councilogImg from './assets/CounciLog.png'
 import arpsLogo from './assets/ARPSLogo.png'
 import autumnAssetsLogo from './assets/AUTUMNASSETS.png'
 import aeltaImg from './assets/AeltaHeroPage.jpg'
@@ -45,6 +46,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   let techstack = {
+    "CounciLog": ["React", "FastAPI", "Supabase", "Vercel"],
     "LUMI": ["React", "FastAPI", "Supabase", "Python", "FAISS"],
     "EDA Report for Lloyds Banking Group": ["Python", "Pandas", "NumPy", "Matplotlib"],
     "A.R.P.S": ["Godot", "C++"],
@@ -56,6 +58,13 @@ function App() {
   }
 
   let projects = [
+    {
+      projectTitle: "CounciLog",
+      projectTagline: "Everything on one plate — student org operations",
+      projectImage: councilogImg,
+      projectDescription: "CounciLog replaces paper logbooks and group-chat tracking for student organizations — duty rosters, daily photo journals, signatory-chain document tracking, budgets, and checklists in one place. Attendance is proven by documented work instead of clock-ins, and org-specific positions, templates, and chains are tenant data, so any student org can onboard with zero code changes.",
+      projectLink: "https://councilog-landing.vercel.app/"
+    },
     {
       projectTitle: "LUMI",
       projectTagline: "Data-Driven Environmental Intelligence for Renewable Energy Decision Support",
@@ -114,7 +123,7 @@ function App() {
     }
   ]
 
-  const featuredProjectTitles = ["LUMI", "EDA Report for Lloyds Banking Group", "AutumnAssets"]
+  const featuredProjectTitles = ["CounciLog", "LUMI", "EDA Report for Lloyds Banking Group"]
   const titleIndex = Object.fromEntries(featuredProjectTitles.map((title, index) => [title, index]))
   const featuredProjects = projects
     .filter(project => featuredProjectTitles.includes(project.projectTitle))
@@ -175,6 +184,16 @@ function App() {
   let experiences = [
     {
       category: 'Leadership Roles',
+      title: 'CCS Student Council President',
+      tagline: 'College of Computer Studies',
+      date: 'S.Y. 2026-2027',
+      description: 'Serve as President of the College of Computer Studies Student Council, providing executive leadership and end-to-end oversight for all council projects, programs, and student-facing initiatives. Direct officer teams through project planning, documentation, and event execution; coordinate with faculty, university offices, and partner organizations; and maintain the accountability systems — duty rosters, paper tracking, and signatory workflows — that keep council operations moving on schedule. Elevated to the role after serving as Council Secretary in S.Y. 2024-2025.',
+      responsibilities: ['Executive Leadership', 'Project Management', 'Strategic Planning', 'Stakeholder Coordination', 'Team Management'],
+      icon: 'fa-solid fa-users-gear',
+      featured: true,
+    },
+    {
+      category: 'Leadership Roles',
       title: 'CCS Student Council Secretary',
       tagline: 'College of Computer Studies',
       date: 'S.Y. 2024-2025',
@@ -195,8 +214,8 @@ function App() {
       category: 'Leadership Roles',
       title: 'DALTA Esports Vice President',
       tagline: 'DALTA Esports — University of Perpetual Help System DALTA',
-      date: 'S.Y. 2025-2026',
-      description: 'Helped lead the university esports organization, driving event operations, tournament planning, and community growth.',
+      date: 'S.Y. 2025-2026 & 2026-2027',
+      description: 'Lead the university esports organization, driving event operations, tournament planning, and community growth — currently serving a second consecutive term.',
       responsibilities: ['Leadership', 'Event Management', 'Community Building', 'Strategic Planning'],
       icon: 'fa-solid fa-gamepad',
     },
@@ -251,7 +270,6 @@ function App() {
       description: 'Part of the organizing committee for a program that conducted a seminar on Government E-Services, guiding barangay residents on how digital platforms can make everyday transactions more accessible and efficient.',
       responsibilities: ['Organizing Committee', 'Community Outreach', 'Digital Literacy'],
       icon: 'fa-solid fa-hand-holding-heart',
-      featured: true,
     },
     {
       category: 'Competitions & Technical Challenges',
@@ -333,9 +351,9 @@ function App() {
   ]
 
   const featuredTitles = [
+    'CCS Student Council President',
     'The Hexcore Labs PH University Tournament: "Mission: Learnpossible"',
     '14th I.T. Skills Olympics: "Securing the Human Centric Technology"',
-    'Digital Empowerment and Livelihood Program',
   ]
 
   const experienceTitleIndex = Object.fromEntries(featuredTitles.map((title, index) => [title, index]))
