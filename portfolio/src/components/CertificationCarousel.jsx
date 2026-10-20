@@ -174,7 +174,13 @@ function CertificationCarousel({ certifications }) {
               <h3>{cert.certTitle}</h3>
               {cert.certTagline && <p className="certification-tagline">{cert.certTagline}</p>}
               <figure className="certification-figure">
-                <img src={cert.certImage} alt={cert.certTitle} draggable="false" loading="lazy" decoding="async" />
+                {cert.certImage ? (
+                  <img src={cert.certImage} alt={cert.certTitle} draggable="false" loading="lazy" decoding="async" />
+                ) : (
+                  <div className="certification-figure-placeholder" aria-hidden="true">
+                    {cert.certTitle?.charAt(0)?.toUpperCase() ?? '?'}
+                  </div>
+                )}
               </figure>
               <p className="certification-description">{cert.certDescription}</p>
               {cert.certLink && (

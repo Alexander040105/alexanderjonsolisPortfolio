@@ -54,7 +54,8 @@ function App() {
     "Champion Performance at Worlds 2024": ["Python", "Pandas", "NumPy", "Matplotlib"],
     "GuideBot": ["Ollama", "Python", "ElectronJS", "LangChain"],
     "Aelta": ["HTML", "CSS", "JavaScript", "Data Analytics", "Generative AI"],
-    "Human Resources Management System": ["Flask", "MySQL", "Python"]
+    "Human Resources Management System": ["Flask", "MySQL", "Python"],
+    "Blackbird SWE Virtual Experience": ["React", "Material UI", "GitHub CLI", "Arduino", "A/B Testing"]
   }
 
   let projects = [
@@ -78,6 +79,13 @@ function App() {
       projectImage: "",
       projectDescription: "Exploratory data analysis on customer churn, identifying key patterns, demographic trends, and behavioral drivers to support strategic retention decisions.",
       projectLink: "https://docs.google.com/document/d/1cu40Zpb6SCpGYf_gl8bLMehHO6hbnQy_PSR5WvmlLP8/edit?usp=sharing"
+    },
+    {
+      projectTitle: "Blackbird SWE Virtual Experience",
+      projectTagline: "Blackbird Australia / Forage — October 2026",
+      projectImage: "",
+      projectDescription: "Completed Blackbird Australia's Software Engineering job simulation — shipped a React change through a full git/GitHub PR lifecycle, implemented and unit-tested login validation on a simulated Harrison.ai React + MUI codebase, proposed an A/B test for an onboarding funnel, and built an Arduino temperature-warning system simulated on Wokwi.",
+      projectLink: "https://github.com/Alexander040105/BlackBird-Forage-SoftwareEngineering"
     },
     {
       projectTitle: "AutumnAssets",
@@ -178,6 +186,13 @@ function App() {
       certImage: datacomCert,
       certDescription: "Completed Datacom's job simulation on Forage, using generative AI to research, write, design, debug, and present client-ready solutions. Practiced prompt engineering, troubleshooting a website issue, and applying AI output in a professional, non-technical setting.",
       certLink: "https://www.theforage.com/completion-certificates/gCW7Xki5Y3vNpBmnn/YKTiJKCwxeXG3diLY_gCW7Xki5Y3vNpBmnn_jozTFFqhtkLCXDvKM_1786379278233_completion_certificate.pdf"
+    },
+    {
+      certTitle: "Blackbird SWE Virtual Experience",
+      certTagline: "Blackbird Australia / Forage — October 17, 2026",
+      certImage: "",
+      certDescription: "Completed Blackbird Australia's Software Engineering job simulation covering PR workflows, unit-tested feature code, product experimentation, and embedded/IoT design.",
+      certLink: "https://github.com/Alexander040105/BlackBird-Forage-SoftwareEngineering"
     }
   ]
 
