@@ -28,7 +28,7 @@ function Home({ homeProjects, techstack, certifications, featuredExperiences, so
               <a href="https://linkedin.com/in/alexander-jon-solis-2162a727a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </li>
             <li>
-              <a href="mailto:alexanderjonsolis0401@gmail.com">Email</a>
+              <a href="mailto:solisalexanderjon@gmail.com">Email</a>
             </li>
             <li>
               <a href="https://www.kaggle.com/alexanderjonsolis" target="_blank" rel="noopener noreferrer">Kaggle</a>
